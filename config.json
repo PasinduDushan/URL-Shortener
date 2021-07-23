@@ -1,0 +1,18 @@
+{
+    "port": "5000",
+    "oauth2": {
+        "redirect_uri": "http://localhost:5000/api/callback", 
+        "client_id": "773913795583803422",
+        "secret": "tWhenBsc2EFXV7_EglvdQDkuHdGHKJGX",
+        "scopes": ["identify"]
+    },
+    "session": {
+        "secret": "#$#$#$#SDFDDBA*&$&%$&#&%HFVHVIY&*^$%#$#%RDCHGCJCJGVJFT#%E#%#&$^&*RUFJVHJV",
+        "cookie": {
+            "maxAge": 86400000
+        },
+        "resave": true,
+        "saveUninitialized": false
+    },
+    "mongo_uri": "MONGO URI GOES HERE"
+}
