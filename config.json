@@ -3,7 +3,7 @@
     "oauth2": {
         "redirect_uri": "http://localhost:5000/api/callback", 
         "client_id": "773913795583803422",
-        "secret": "tWhenBsc2EFXV7_EglvdQDkuHdGHKJGX",
+        "secret": "ql1OOTMO5FobLqCKbS4lHQvJtztLv2up",
         "scopes": ["identify"]
     },
     "session": {
@@ -14,5 +14,5 @@
         "resave": true,
         "saveUninitialized": false
     },
-    "mongo_uri": "MONGO URI GOES HERE"
+    "mongo_uri": "mongodb+srv://Admin:something1234@url-shortener.3dj9c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 }

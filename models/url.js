@@ -8,6 +8,14 @@ const url = new mongoose.Schema({
     short_url_code:{
         type:String,
         required: true
+    },
+    author:{
+        type: String,
+        required: true
+    },
+    long_url_nickname:{
+        type: String,
+        required: true
     }
 })
 
