@@ -62,7 +62,7 @@ app.get('/:url', async (req, res) => {
         res.redirect('/x/error?code=404&message=We cannot find this short URL')
         return
     }
-    res.redirect(`${SHORT_URL.long_url}?code=200 source=shortner.net state=success`)
+    res.redirect(`${SHORT_URL.long_url}?code=200 source=urllink.cf state=success`)
 })
 
 app.post('/addurl/success', async (req, res) => {

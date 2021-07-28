@@ -1,9 +1,9 @@
 {
     "port": "5000",
     "oauth2": {
-        "redirect_uri": "http://localhost:5000/api/callback", 
-        "client_id": "773913795583803422",
-        "secret": "ql1OOTMO5FobLqCKbS4lHQvJtztLv2up",
+        "redirect_uri": "https://urllink.cf/api/callback", 
+        "client_id": "869942844863971328",
+        "secret": "qdMoNtljQhMC7rsPlRYjvySbKtokKSNo",
         "scopes": ["identify"]
     },
     "session": {
