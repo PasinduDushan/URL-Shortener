@@ -1,9 +1,10 @@
 {
     "port": "5000",
     "oauth2": {
-        "redirect_uri": "https://urllink.cf/api/callback", 
-        "client_id": "869942844863971328",
-        "secret": "qdMoNtljQhMC7rsPlRYjvySbKtokKSNo",
+        "site_url": ""
+        "redirect_uri": "", //https://yourdomain.com/api/callback 
+        "client_id": "",
+        "secret": "",
         "scopes": ["identify"]
     },
     "session": {
@@ -14,5 +15,5 @@
         "resave": true,
         "saveUninitialized": false
     },
-    "mongo_uri": "mongodb+srv://Admin:something1234@url-shortener.3dj9c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    "mongo_uri": "mongodb url"
 }
