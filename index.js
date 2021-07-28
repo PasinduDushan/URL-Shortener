@@ -25,6 +25,7 @@ app.get('/', async (req, res) => {
    const URL_CODE = await URL_INFO.find({ author: json.username })
    res.render('index', {
        json: json,
+       config: config,
        URL_CODE: URL_CODE
    })
 })
