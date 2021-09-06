@@ -8,9 +8,9 @@
         "scopes": ["identify"]
     },
     "session": {
-        "secret": "#$#$#$#SDFDDBA*&$&%$&#&%HFVHVIY&*^$%#$#%RDCHGCJCJGVJFT#%E#%#&$^&*RUFJVHJV",
+        "secret": "youshallnotpass",
         "cookie": {
-            "maxAge": 86400000
+            "maxAge": 86400000 //Cookie age in milliseconds
         },
         "resave": true,
         "saveUninitialized": false
