@@ -1,8 +1,8 @@
 {
     "port": "5000",
     "oauth2": {
-        "site_url": ""
-        "redirect_uri": "", //https://yourdomain.com/api/callback 
+        "site_url": "",
+        "redirect_uri": "", /* https://yourdomain.com/api/callback */
         "client_id": "",
         "secret": "",
         "scopes": ["identify"]
