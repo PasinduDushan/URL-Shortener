@@ -1,10 +1,10 @@
 {
-    "port": "5000",
+    "port": "3000",
     "oauth2": {
-        "site_url": "",
-        "redirect_uri": "", //https://yourdomain.com/api/callback 
-        "client_id": "",
-        "secret": "",
+        "site_url": "https://pasindudushan-url-shortener-w66w5xr63v5r6-3000.githubpreview.dev",
+        "redirect_uri": "https://pasindudushan-url-shortener-w66w5xr63v5r6-3000.githubpreview.dev/api/callback",
+        "client_id": "823524955492843541",
+        "secret": "STacN-Z2IidDgjJ_JRmvDtV8rmjbGSaB",
         "scopes": ["identify"]
     },
     "session": {
@@ -15,5 +15,5 @@
         "resave": true,
         "saveUninitialized": false
     },
-    "mongo_uri": "mongodb url"
+    "mongo_uri": "mongodb+srv://Admin:Thinkinarealway2005@url-short.dehlj.mongodb.net/?retryWrites=true&w=majority"
 }

@@ -6,6 +6,7 @@ const FormData = require('form-data')
 const Swal = require('sweetalert2')
 const config = require('./config.json')
 const URL_INFO = require('./models/url')
+const USER_INFO = require('./models/user')
 const parser = require('body-parser')
 
 app.use(parser.urlencoded({ extended: false }))
@@ -22,11 +23,14 @@ app.get('/', async (req, res) => {
    })
    const json = await data.json()
    console.log(json)
-   const URL_CODE = await URL_INFO.find({ author: json.username })
+   const URL_CODE = await URL_INFO.find({ user_id: json.id })
+   const DISCORD_USER = await USER_INFO.findOne({ userid: json.id })
+
    res.render('index', {
        json: json,
        config: config,
-       URL_CODE: URL_CODE
+       URL_CODE: URL_CODE,
+       DISCORD_USER: DISCORD_USER
    })
 })
 
@@ -54,6 +58,29 @@ app.get('/api/callback', async (req, res) => {
     })).json()
     console.log(json)
     req.session.bearer_token = json.access_token
+
+    const user = await fetch(`https://discord.com/api/v9/users/@me`, {
+       headers:{
+           "Authorization": `Bearer ${req.session.bearer_token}`
+       }
+   })
+   const user_data = await user.json()
+   const user_info = await USER_INFO.findOne({ userid: user_data.id })
+
+   if(!user_info){
+    await USER_INFO.findOneAndUpdate(
+        {
+            username: user_data.username
+        },
+        {
+            userid: user_data.id,
+            account_verified: false
+        },
+        {
+            upsert: true
+        }
+    )
+   }
     res.redirect('/')
 })
 
@@ -84,7 +111,7 @@ app.post('/addurl/success', async (req, res) => {
         },
         {
             short_url_code: createCode(7),
-            author: json.username,
+            user_id: json.id,
             long_url_nickname: req.body.nickname
         },
         { upsert: true }

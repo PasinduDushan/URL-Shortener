@@ -9,7 +9,7 @@ const url = new mongoose.Schema({
         type:String,
         required: true
     },
-    author:{
+    user_id:{
         type: String,
         required: true
     },
