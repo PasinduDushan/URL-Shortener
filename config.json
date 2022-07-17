@@ -1,10 +1,10 @@
 {
-    "port": "3000",
+    "port": "5000",
     "oauth2": {
-        "site_url": "https://pasindudushan-url-shortener-w66w5xr63v5r6-3000.githubpreview.dev",
-        "redirect_uri": "https://pasindudushan-url-shortener-w66w5xr63v5r6-3000.githubpreview.dev/api/callback",
+        "site_url": "https://pasindudushan-url-shortener-w66w5xr63v5r6-5000.githubpreview.dev",
+        "redirect_uri": "https://pasindudushan-url-shortener-w66w5xr63v5r6-5000.githubpreview.dev/api/callback",
         "client_id": "823524955492843541",
-        "secret": "STacN-Z2IidDgjJ_JRmvDtV8rmjbGSaB",
+        "secret": "vk2KLQnE5wocXJMUp1IVZ8K_9WFHEOfu",
         "scopes": ["identify"]
     },
     "session": {
