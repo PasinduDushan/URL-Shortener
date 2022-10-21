@@ -3,42 +3,77 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shards-ui/3.0.0/css/shards.min.css">
     <script src="sweetalert2.min.js"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
-
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule=""
+    src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"
+  ></script>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,body{
+        width: 100%;
+        height: 100%;
+      }
+      body{
+        display: flex;
+        flex-direction: column;
+      }
+      .container{
+        flex: 1;
+        width: 100%;
+        padding: 25px 60px;
+        max-width: unset !important;
+      }
+    </style>
     <title>Welcome <%= json.username%></title>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light">
       <div class="container-fluid">
-        <a class="navbar-brand">URL Shortener</a>
+        <a class="navbar-brand font-weight-bold text-success"><ion-icon name="globe"></ion-icon> URL Shortener</a>
         <form class="d-flex" method="POST" action="/logout">
-          <button type="submit" class="btn btn-primary">Logout</button>
+          <button type="submit" class="btn btn-secondary">Logout</button>
         </form>
       </div>
     </nav>    
-    <br>
-    <u><center><h1>Welcome <%= json.username %></h1></center></u><br>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <ul><li><h3>Short URLs you have created so far</h3></li></ul><br>
-    <h4><center>Example code usage:- http://localhost/{CODE}</center></h4><br>
+    <div class="container bg-light">
+    <p class="h4 text-uppercase font-weight-bold">Welcome <%= json.username %></p><br>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shards-ui/3.0.0/js/shards.min.js" integrity="sha512-pY3v/NW9hYmsCbTOeU6NHkNbaTAAGXLTZ27i1MIqHVLwniv/0xt26F5vSKI3jr2bZBJP3k2jRvlilMCp3E1bKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <p class="h5">Short URLs you have created so far</p>
+    <!-- <p class="h6">Example code usage:- http://localhost/{CODE}</p> -->
+    <p>Example code usage:- <code class="text-success">http://localhost/{CODE}</code></p>
     <% if(URL_CODE.length === 0){ %>
-      <center><h3>You haven't created any short URL's yet</h3></center>
+      <div class="alert alert-dark rounded" role="alert">
+        You have not created any short URL's yet!
+      </div>
       <% } else{ %>
-    <br>
     <div class="row row-cols-1 row-cols-md-3 g-4">
     <% URL_CODE.forEach(function(code) { %>
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">
-                <a href="<%= code.long_url %>" class="btn btn-primary">Long URL - <%= code.long_url_nickname %></a></h5>
+                <a href="<%= code.long_url %>" class="btn btn-dark">Long URL - <%= code.long_url_nickname %></a></h5>
               <p class="card-text">You can click below link and site will automatically redirect to the desired site. Shorter URL Code Below 👇</p>
               <span id="shortCode" style="display:none !important"><%= code.short_url_code %></span>
-              <a href="https://pasindudushan-url-shortener-w66w5xr63v5r6-5000.githubpreview.dev/<%= code.short_url_code %>" class="btn btn-primary">Short URL Code - <%= code.short_url_code %></a><br><br>
-                <button onclick="deleteUrl()" class="btn btn-primary">Delete URL</button>
+              <a href="https://pasindudushan-url-shortener-w66w5xr63v5r6-5000.githubpreview.dev/<%= code.short_url_code %>" class="btn btn-success">Short URL Code - <%= code.short_url_code %></a><br><br>
+                <button onclick="deleteUrl()" class="btn btn-danger">Delete URL</button>
             </div>
           </div>
         </div>
@@ -47,7 +82,7 @@
   <% } %>
  <br>
  <% if(!DISCORD_USER.account_verified){ %>
-  <center><form id="mainform"class="needs-validation" method="POST" action="/addurl/success" novalidate>
+  <form id="mainform"class="needs-validation" method="POST" action="/addurl/success" novalidate>
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">Long URL</label>
       <input type="text" class="form-control" disabled name="id" id="validationCustom01" placeholder="https://yourlongdomain.com" required>
@@ -62,13 +97,13 @@
         You must type a nickname
       </div>
     </div><br>
-    <div class="col-12" style="display: flex; justify-content: center;">
-      <button type="submit" disabled class="btn btn-primary">Create</button>
-    </div><br>
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-primary">Create</button>
+    </div>
   </form>
- </center>
+ 
   <% } else{ %>
-  <center><form id="mainform"class="needs-validation" method="POST" action="/addurl/success" novalidate>
+  <form id="mainform"class="needs-validation" method="POST" action="/addurl/success" novalidate>
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">Long URL</label>
       <input type="text" class="form-control" name="id" id="validationCustom01" placeholder="https://yourlongdomain.com" required>
@@ -83,22 +118,17 @@
         You must type a nickname
       </div>
     </div><br>
-    <div class="col-12" style="display: flex; justify-content: center;">
+    <div class="col-md-4">
       <button type="submit" class="btn btn-primary">Create</button>
-    </div><br>
+    </div>
   </form>
- </center>
+
+</div>
  <% } %>
   </body>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>
-
-<style>
-  body{
-    background-color: #5D6D7E;
-  }
-</style>
 
 <script>
 (function () {
