@@ -57,7 +57,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/shards-ui/3.0.0/js/shards.min.js" integrity="sha512-pY3v/NW9hYmsCbTOeU6NHkNbaTAAGXLTZ27i1MIqHVLwniv/0xt26F5vSKI3jr2bZBJP3k2jRvlilMCp3E1bKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <p class="h5">Short URLs you have created so far</p>
     <!-- <p class="h6">Example code usage:- http://localhost/{CODE}</p> -->
-    <p>Example code usage:- <code class="text-success">http://localhost/{CODE}</code></p>
+    <p>Example code usage:- <code class="text-success">https://url-shortener07-c4d9ee73edc1.herokuapp.com/{CODE}</code></p>
     <% if(URL_CODE.length === 0){ %>
       <div class="alert alert-dark rounded" role="alert">
         You have not created any short URL's yet!
@@ -72,7 +72,7 @@
                 <a href="<%= code.long_url %>" class="btn btn-dark">Long URL - <%= code.long_url_nickname %></a></h5>
               <p class="card-text">You can click below link and site will automatically redirect to the desired site. Shorter URL Code Below 👇</p>
               <span id="shortCode" style="display:none !important"><%= code.short_url_code %></span>
-              <a href="https://pasindudushan-url-shortener-w66w5xr63v5r6-5000.githubpreview.dev/<%= code.short_url_code %>" class="btn btn-success">Short URL Code - <%= code.short_url_code %></a><br><br>
+              <a href="https://url-shortener07-c4d9ee73edc1.herokuapp.com/<%= code.short_url_code %>" class="btn btn-success">Short URL Code - <%= code.short_url_code %></a><br><br>
                 <button onclick="deleteUrl()" class="btn btn-danger">Delete URL</button>
             </div>
           </div>
