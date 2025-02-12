@@ -3,17 +3,17 @@
     "oauth2": {
         "site_url": "https://url-shortener07-c4d9ee73edc1.herokuapp.com",
         "redirect_uri": "https://url-shortener07-c4d9ee73edc1.herokuapp.com/api/callback",
-        "client_id": "1339079158558625854",
-        "secret": "fWY-IGR_0DElCnprEXAU2LkcjAkKBvNC",
+        "client_id": "", 
+        "secret": "",
         "scopes": ["identify"]
     },
     "session": {
-        "secret": "#$#$#$#SDFDDBA*&$&%$&#&%HFVHVIY&*^$%#$#%RDCHGCJCJGVJFT#%E#%#&$^&*RUFJVHJV",
+        "secret": "YOUR_SUPER_DUPER_SECRET_CODE_HERE",
         "cookie": {
             "maxAge": 86400000
         },
         "resave": true,
         "saveUninitialized": false
     },
-    "mongo_uri": "mongodb+srv://admin_pasindu:m1kN4WaHRhmgi2XK@url.ws35r.mongodb.net/"
+    "mongo_uri": "MONGO_DB_URI"
 }
