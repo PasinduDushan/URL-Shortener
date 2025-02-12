@@ -81,28 +81,6 @@
   </div>
   <% } %>
  <br>
- <% if(!DISCORD_USER.account_verified){ %>
-  <form id="mainform"class="needs-validation" method="POST" action="/addurl/success" novalidate>
-    <div class="col-md-4">
-      <label for="validationCustom01" class="form-label">Long URL</label>
-      <input type="text" class="form-control" disabled name="id" id="validationCustom01" placeholder="https://yourlongdomain.com" required>
-      <div class="invalid-feedback">
-        You must type a long url
-      </div>
-    </div><br>
-    <div class="col-md-4">
-      <label for="validationCustom01" class="form-label">Nickname for long URL</label>
-      <input type="text" class="form-control" disabled name="nickname" id="validationCustom01" placeholder="A Nickname" maxlength="25" required>
-      <div class="invalid-feedback">
-        You must type a nickname
-      </div>
-    </div><br>
-    <div class="col-md-4">
-      <button type="submit" class="btn btn-primary">Create</button>
-    </div>
-  </form>
- 
-  <% } else{ %>
   <form id="mainform"class="needs-validation" method="POST" action="/addurl/success" novalidate>
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">Long URL</label>
@@ -124,7 +102,6 @@
   </form>
 
 </div>
- <% } %>
   </body>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
