@@ -15,5 +15,5 @@
         "resave": true,
         "saveUninitialized": false
     },
-    "mongo_uri": "mongodb+srv://Admin:Thinkinarealway2005@url-short.dehlj.mongodb.net/?retryWrites=true&w=majority"
+    "mongo_uri": "mongodb+srv://admin_pasindu:m1kN4WaHRhmgi2XK@url.ws35r.mongodb.net/"
 }
