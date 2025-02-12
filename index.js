@@ -149,7 +149,7 @@ function createCode(length) {
     return result;
 }
 
-app.listen(config.port || 5000, async err => {
+app.listen(process.env.PORT || config.port, async err => {
     await mongoose.connect(config.mongo_uri, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
